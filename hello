@@ -1,3 +1,4 @@
 # ArchInst
 ls
 echo "hello world"
+mkdir "hello_world"
