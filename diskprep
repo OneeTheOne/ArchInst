@@ -1,0 +1,14 @@
+echo "# Creating msdos partition table"
+parted -s /dev/sda mklabel msdos
+
+echo "# Creating swap"
+parted -s /dev/sda unit MiB mkpart primary linux-swap 1 2000
+
+echo "# Creating / partition"
+parted -s /dev/sda unit MiB mkpart primary ext4 2000 100%
+
+echo "# Setting partition 2 bootable"
+parted -s /dev/sda set 2 boot on
+
+mkdir -p /mnt/boot
+mount /dev/sda2 /mnt/boot
