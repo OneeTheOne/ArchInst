@@ -13,4 +13,4 @@ parted -s /dev/sda set 2 boot on
 mount /dev/sda2 /mnt
 
 echo ""
-echo # The following partitions were created"
+echo "# The following partitions were created"
